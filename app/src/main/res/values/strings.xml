@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Pet Match</string>
+    <string name="error_request">Error Connection</string>
+    <string name="no_pets">No Pets Found.</string>
+    <string name="category">Category</string>
+    <string name="dogs">Dogs</string>
+    <string name="cats">Cats</string>
+    <string name="all">All</string>
+    <string name="age">Age</string>
+    <string name="coat">Coat</string>
+    <string name="size">Size</string>
+    <string name="breed">Breed</string>
+    <string name="no_info">No information</string>
+    <string name="colors">Colors</string>
+    <string name="primary">Primary</string>
+    <string name="secondary">Secondary</string>
+    <string name="tertiary">Tertiary</string>
+    <string name="no_color">No color</string>
+    <string name="adopt_me">Adopt Me</string>
+    <string name="spayed">Spayed</string>
+    <string name="neutered">Neutered</string>
+    <string name="house_trained">House Trained</string>
+    <string name="declawed">Declawed</string>
+    <string name="not_special_needs">No special needs</string>
+    <string name="good_with_kids">Good with kids</string>
+    <string name="good_with_dogs">Good with dogs</string>
+    <string name="good_with_cats">Good with cats</string>
+</resources>
