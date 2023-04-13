@@ -12,13 +12,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.iago.petmatch.PetMatchViewModel
 import com.iago.petmatch.TypePet
 import com.iago.petmatch.screens.home.commons.Categories
 import com.iago.petmatch.screens.home.commons.ListPets
 
 @Composable
-fun HomeScreen(navController: NavHostController, viewModel: PetMatchViewModel) {
+fun HomeScreen(
+    navController: NavHostController,
+    viewModel: PetMatchViewModel,
+    firebaseAnalytics: FirebaseAnalytics
+) {
 
     val context = LocalContext.current
     var typeSelected = remember { mutableStateOf(TypePet.ALL) }
@@ -47,7 +52,7 @@ fun HomeScreen(navController: NavHostController, viewModel: PetMatchViewModel) {
         modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.surface
     ) {
         Column() {
-            Categories(typeSelected)
+            Categories(typeSelected, firebaseAnalytics)
             ListPets(viewModel, navController)
         }
     }

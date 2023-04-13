@@ -6,7 +6,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Cake
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,9 +23,9 @@ import com.iago.petmatch.ui.theme.White
 fun CardsInfo(animal: Animal) {
     Row(modifier = Modifier.fillMaxWidth(.9f), horizontalArrangement = Arrangement.SpaceBetween) {
         CardInfo(Modifier.weight(1f), R.string.age, Icons.Default.Cake, listOf(animal.age))
-        CardInfo(Modifier.weight(1f), R.string.coat, Icons.Default.Cake, listOf(animal.coat ?: ""))
-        CardInfo(Modifier.weight(1f), R.string.size, Icons.Default.Cake, listOf(animal.size))
-        CardInfo(Modifier.weight(1f), R.string.breed, Icons.Default.Cake, listOf(animal.breeds.primary, animal.breeds.secondary))
+        CardInfo(Modifier.weight(1f), R.string.coat, Icons.Default.ContentCut, listOf(animal.coat ?: ""))
+        CardInfo(Modifier.weight(1f), R.string.size, Icons.Default.OpenInFull, listOf(animal.size))
+        CardInfo(Modifier.weight(1f), R.string.breed, Icons.Default.Pets, listOf(animal.breeds.primary, animal.breeds.secondary))
     }
 }
 

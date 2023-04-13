@@ -9,12 +9,13 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.iago.petmatch.R
 import com.iago.petmatch.TypePet
 import com.iago.petmatch.Types
 
 @Composable
-fun Categories(typeSelected: MutableState<TypePet>) {
+fun Categories(typeSelected: MutableState<TypePet>, firebaseAnalytics: FirebaseAnalytics) {
     Column(Modifier.padding(vertical = 15.dp, horizontal = 25.dp)) {
         Text(
             style = MaterialTheme.typography.h1,
@@ -27,6 +28,7 @@ fun Categories(typeSelected: MutableState<TypePet>) {
                 .background(MaterialTheme.colors.background, MaterialTheme.shapes.large)
         ) {
             PetType(
+                firebaseAnalytics,
                 Types.dogs,
                 typeSelected,
                 Modifier
@@ -34,6 +36,7 @@ fun Categories(typeSelected: MutableState<TypePet>) {
                     .weight(1f)
             )
             PetType(
+                firebaseAnalytics,
                 Types.cats,
                 typeSelected,
                 Modifier
@@ -41,6 +44,7 @@ fun Categories(typeSelected: MutableState<TypePet>) {
                     .weight(1f)
             )
             PetType(
+                firebaseAnalytics,
                 Types.all,
                 typeSelected,
                 Modifier
