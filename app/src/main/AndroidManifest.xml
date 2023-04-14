@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
 
     <application
         android:name=".PetMatchApplication"
@@ -16,10 +17,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetMatch"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/ad_mob_id"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:hardwareAccelerated="true"
             android:theme="@style/Theme.PetMatch">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

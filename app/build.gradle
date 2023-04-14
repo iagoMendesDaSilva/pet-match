@@ -21,10 +21,14 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+
         Properties properties = new Properties()
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
         buildConfigField "String", "CLIENT_ID", "\"${properties.getProperty("CLIENT_ID")}\""
         buildConfigField "String", "CLIENT_SECRET", "\"${properties.getProperty("CLIENT_SECRET")}\""
+        buildConfigField "String", "AD_MOB_ID", "\"${properties.getProperty("AD_MOB_ID")}\""
+        buildConfigField "String", "AD_MOB_BANNER_ID", "\"${properties.getProperty("AD_MOB_BANNER_ID")}\""
+        buildConfigField "String", "AD_MOB_TEST_BANNER_ID", "\"${properties.getProperty("AD_MOB_TEST_BANNER_ID")}\""
     }
 
     buildTypes {
@@ -107,6 +111,10 @@ dependencies {
     // Status Bar
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.28.0"
 
+    // Firebase Analytics
     implementation platform('com.google.firebase:firebase-bom:31.3.0')
     implementation 'com.google.firebase:firebase-analytics:17.4.1'
+
+    //AdMob
+    implementation 'com.google.android.gms:play-services-ads:22.0.0'
 }

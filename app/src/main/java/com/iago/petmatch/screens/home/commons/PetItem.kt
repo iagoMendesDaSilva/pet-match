@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,8 +21,6 @@ import com.iago.petmatch.navigation.Screens
 
 @Composable
 fun PetItem(animal: Animal, navController: NavHostController) {
-
-    LaunchedEffect(key1 = animal.photos){}
 
     Column(
         modifier = Modifier
@@ -48,7 +45,7 @@ fun PetItem(animal: Animal, navController: NavHostController) {
                     .clip(shape = MaterialTheme.shapes.medium),
                 model = ImageRequest.Builder(LocalContext.current).data(
                     if (animal.photos.isEmpty()) R.drawable.no_image
-                    else animal.photos[0].large
+                    else animal.photos[0].medium
                 ).crossfade(false).build(),
                 placeholder = painterResource(R.drawable.no_image),
                 contentScale = ContentScale.FillBounds,

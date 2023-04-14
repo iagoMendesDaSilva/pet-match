@@ -3,6 +3,8 @@ package com.iago.petmatch.screens.home
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -11,10 +13,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.iago.petmatch.PetMatchViewModel
 import com.iago.petmatch.TypePet
+import com.iago.petmatch.screens.home.commons.BannerAdView
 import com.iago.petmatch.screens.home.commons.Categories
 import com.iago.petmatch.screens.home.commons.ListPets
 
@@ -52,8 +60,10 @@ fun HomeScreen(
         modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.surface
     ) {
         Column() {
+            BannerAdView()
             Categories(typeSelected, firebaseAnalytics)
             ListPets(viewModel, navController)
         }
     }
 }
+
