@@ -11,7 +11,7 @@
     <string name="size">Size</string>
     <string name="breed">Breed</string>
     <string name="no_info">No information</string>
-    <string name="colors">Colors</string>
+    <string name="color">Color</string>
     <string name="primary">Primary</string>
     <string name="secondary">Secondary</string>
     <string name="tertiary">Tertiary</string>
@@ -25,5 +25,5 @@
     <string name="good_with_kids">Good with kids</string>
     <string name="good_with_dogs">Good with dogs</string>
     <string name="good_with_cats">Good with cats</string>
-    <string name="ad_mob_id">YOUR AD MOB ID HERE</string>
+    <string name="ad_mob_id">YOUR AD MOD ID</string>
 </resources>

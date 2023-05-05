@@ -4,27 +4,22 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.Female
 import androidx.compose.material.icons.rounded.LocationOn
 import androidx.compose.material.icons.rounded.Male
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.iago.petmatch.models.Animal
 import com.iago.petmatch.ui.theme.Blue
 import com.iago.petmatch.ui.theme.Pink
-import com.iago.petmatch.ui.theme.White
 
 @Composable
 fun HeaderInfo(animal: Animal) {
@@ -41,7 +36,6 @@ fun HeaderInfo(animal: Animal) {
                 NameNGender(animal, isFemale)
                 Location(animal)
             }
-            ButtonAdoptMe(animal.url)
         }
         if (!animal.description.isNullOrEmpty())
             Text(
@@ -49,29 +43,6 @@ fun HeaderInfo(animal: Animal) {
                 color = MaterialTheme.colors.secondary,
                 style = MaterialTheme.typography.subtitle1,
             )
-    }
-}
-
-@Composable
-fun ButtonAdoptMe(url: String) {
-    val context = LocalContext.current
-    Box(
-        modifier = Modifier
-            .width(45.dp)
-            .height(45.dp)
-            .background(MaterialTheme.colors.primary, MaterialTheme.shapes.large)
-            .clickable {
-                openLink(context, url)
-            },
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            tint = White,
-            modifier = Modifier
-                .size(25.dp),
-            contentDescription = null,
-            imageVector = Icons.Rounded.Favorite,
-        )
     }
 }
 

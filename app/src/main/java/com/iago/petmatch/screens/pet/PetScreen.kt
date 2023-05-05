@@ -1,11 +1,7 @@
 package com.iago.petmatch.screens.pet
 
 import android.widget.Toast
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -50,12 +46,16 @@ fun PetInfo(viewModel: PetMatchViewModel, navController: NavHostController) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         ImageHeader(viewModel.pet.value!!.animal)
         Spacer(modifier = Modifier.height(10.dp))
-        LazyColumn(horizontalAlignment = Alignment.CenterHorizontally) {
-            item {
-                HeaderInfo(viewModel.pet.value!!.animal)
-                CardsInfo(viewModel.pet.value!!.animal)
-                CardColors(viewModel.pet.value!!.animal.colors)
-                Tags(viewModel.pet.value!!.animal)
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            HeaderInfo(viewModel.pet.value!!.animal)
+            CardsInfo(viewModel.pet.value!!.animal)
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .padding(bottom = 10.dp),
+                contentAlignment = Alignment.BottomCenter
+            ) {
+                ButtonAdoptMe(viewModel.pet.value!!.animal.url)
             }
         }
     }

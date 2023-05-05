@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -22,7 +23,7 @@ fun ImageHeader(animal: Animal) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(1.3f)
+            .aspectRatio(1f)
     ) {
         AsyncImage(
             modifier = Modifier
